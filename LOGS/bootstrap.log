@@ -1,0 +1,144 @@
+~/Downloads/SQSC/terraform-bug-22965/bootstrap ~/Downloads/SQSC/terraform-bug-22965
+
+[0m[1mInitializing the backend...[0m
+[0m[32m
+Successfully configured the backend "local"! Terraform will automatically
+use this backend unless the backend configuration changes.[0m
+
+[0m[1mInitializing provider plugins...[0m
+- Checking for available provider plugins on https://releases.hashicorp.com...
+- Downloading plugin for provider "aws" (2.30.0)...
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+[0m[1mdata.aws_region.current: Refreshing state...[0m
+[0m[1mdata.aws_caller_identity.current: Refreshing state...[0m
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[32m  [32m+[0m [32maws_dynamodb_table.terraform_locks
+[0m      id:                          <computed>
+      arn:                         <computed>
+      attribute.#:                 "1"
+      attribute.2068930648.name:   "LockID"
+      attribute.2068930648.type:   "S"
+      billing_mode:                "PROVISIONED"
+      hash_key:                    "LockID"
+      name:                        "dynamodb-981467355511-tflock"
+      point_in_time_recovery.#:    <computed>
+      read_capacity:               "5"
+      server_side_encryption.#:    <computed>
+      stream_arn:                  <computed>
+      stream_label:                <computed>
+      stream_view_type:            <computed>
+      write_capacity:              "5"
+[0m
+[0m[32m  [32m+[0m [32maws_s3_bucket.terraform_state
+[0m      id:                          <computed>
+      acceleration_status:         <computed>
+      acl:                         "private"
+      arn:                         <computed>
+      bucket:                      "s3-981467355511-tfstate"
+      bucket_domain_name:          <computed>
+      bucket_regional_domain_name: <computed>
+      force_destroy:               "false"
+      hosted_zone_id:              <computed>
+      region:                      <computed>
+      request_payer:               <computed>
+      versioning.#:                "1"
+      versioning.0.enabled:        "true"
+      versioning.0.mfa_delete:     "false"
+      website_domain:              <computed>
+      website_endpoint:            <computed>
+[0m
+[0m[32m  [32m+[0m [32maws_s3_bucket_object.terraform_state_folder
+[0m      id:                          <computed>
+      acl:                         "private"
+      bucket:                      "${aws_s3_bucket.terraform_state.id}"
+      content_type:                "application/x-directory"
+      etag:                        <computed>
+      force_destroy:               "false"
+      key:                         "eu-west-1/"
+      server_side_encryption:      <computed>
+      storage_class:               <computed>
+      version_id:                  <computed>
+[0m
+[0m
+[0m[1mPlan:[0m 3 to add, 0 to change, 0 to destroy.[0m
+
+[0m[1mDo you want to perform these actions?[0m
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  [1mEnter a value:[0m [0m
+[0m[1maws_s3_bucket.terraform_state: Creating...[0m
+  acceleration_status:         "" => "<computed>"
+  acl:                         "" => "private"
+  arn:                         "" => "<computed>"
+  bucket:                      "" => "s3-981467355511-tfstate"
+  bucket_domain_name:          "" => "<computed>"
+  bucket_regional_domain_name: "" => "<computed>"
+  force_destroy:               "" => "false"
+  hosted_zone_id:              "" => "<computed>"
+  region:                      "" => "<computed>"
+  request_payer:               "" => "<computed>"
+  versioning.#:                "" => "1"
+  versioning.0.enabled:        "" => "true"
+  versioning.0.mfa_delete:     "" => "false"
+  website_domain:              "" => "<computed>"
+  website_endpoint:            "" => "<computed>"[0m
+[0m[1maws_dynamodb_table.terraform_locks: Creating...[0m
+  arn:                       "" => "<computed>"
+  attribute.#:               "" => "1"
+  attribute.2068930648.name: "" => "LockID"
+  attribute.2068930648.type: "" => "S"
+  billing_mode:              "" => "PROVISIONED"
+  hash_key:                  "" => "LockID"
+  name:                      "" => "dynamodb-981467355511-tflock"
+  point_in_time_recovery.#:  "" => "<computed>"
+  read_capacity:             "" => "5"
+  server_side_encryption.#:  "" => "<computed>"
+  stream_arn:                "" => "<computed>"
+  stream_label:              "" => "<computed>"
+  stream_view_type:          "" => "<computed>"
+  write_capacity:            "" => "5"[0m
+[0m[1maws_s3_bucket.terraform_state: Creation complete after 6s (ID: s3-981467355511-tfstate)[0m[0m
+[0m[1maws_s3_bucket_object.terraform_state_folder: Creating...[0m
+  acl:                    "" => "private"
+  bucket:                 "" => "s3-981467355511-tfstate"
+  content_type:           "" => "application/x-directory"
+  etag:                   "" => "<computed>"
+  force_destroy:          "" => "false"
+  key:                    "" => "eu-west-1/"
+  server_side_encryption: "" => "<computed>"
+  storage_class:          "" => "<computed>"
+  version_id:             "" => "<computed>"[0m
+[0m[1maws_dynamodb_table.terraform_locks: Creation complete after 6s (ID: dynamodb-981467355511-tflock)[0m[0m
+[0m[1maws_s3_bucket_object.terraform_state_folder: Creation complete after 1s (ID: eu-west-1/)[0m[0m
+[0m[1m[32m
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.[0m
+[0m
+The state of your infrastructure has been saved to the path
+below. This state is required to modify and destroy your
+infrastructure, so keep it safe. To inspect the complete state
+use the `terraform show` command.
+
+State path: terraform-dev.tfstate[0m
+[0m[1m[32m
+Outputs:
+
+bucket = s3-981467355511-tfstate/eu-west-1/
+dynamodb_table = dynamodb-981467355511-tflock
+region = eu-west-1[0m
+~/Downloads/SQSC/terraform-bug-22965

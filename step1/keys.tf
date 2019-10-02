@@ -1,0 +1,9 @@
+variable "aws_region" {
+  description = "AWS Region"
+  default     = "eu-west-1"
+}
+
+resource "aws_key_pair" "admin_key" {
+  key_name   = "test_admin_key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDeoprQTQ4zpaV1hp0s27eA5PEuh4ObhJnzJB52405PLQij7Pq0elOphCPq7UwABab3Y3jy8tHoB/5lIq2OR0RwbWlx1OBQdIM06i0M4hNu/DZ8VAlfHSb+0Exrk6kS/wYALA+idOAupsTDmhxbDo77grAnyk/RqoPWKwmzqKW/ARymcQskS0VSlD8pJ6GCShS9vGVdwqJyPXae9KTWuc4skTYReokksSVpNdJVFPZkg7QYYNuuin7Zw5jXMp5L358qriQBoYkY2wA9rXpteAQ1uiDCxNU953HcmAPFUFLwlu4utvgdPgQAujihox19ImBLp3bZLFvcAXxvQWXnsaHJ4hbGX5XNiBjSnnptSVOydqWy2i8RofTIPLY8jjTYV343JqZbDhQB5qdgIgz3WqQeyocL/R8he8VGXNU3LUS5dZQRliCMZNHoXY1+Y7XVsRrD4Ya2PemFvRXFNhNEgI9dnBCvlGsnJIIWwQJFmIHftC8/hCaPQSO6zuCXmIfM/4SkMYlf1nTo6641f3lJ5bpzfhKWIgkPpl7XFz5JJ76UzSa8kwPSyJoS3IOfcExbpcGuXg6eWzfsRx3i9UQqytnCVRuxlxg+pnpBoZVf37GR8cN/LHCEd6bjZa3svO7VhSh569pjVOFrnV9/79l3/2IApZKftaI6MoMFztmNWnehTQ== test@terraform"
+}
